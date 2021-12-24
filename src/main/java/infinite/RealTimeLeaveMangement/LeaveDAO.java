@@ -44,6 +44,7 @@ public class LeaveDAO {
 		ResultSet res = pst.executeQuery();
 		Leave leave = null;
 		if(res.next()) {
+		    leave = new Leave();
 			leave.setEMP_ID(res.getInt("EMP_ID"));
 			leave.setEmp_NAME(res.getString("EMP_NAME"));
 			leave.setEMP_MAIL(res.getString("EMP_MAIL"));
