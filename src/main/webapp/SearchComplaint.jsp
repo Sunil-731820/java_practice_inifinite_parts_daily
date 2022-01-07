@@ -28,11 +28,11 @@
 		pst.setString(1, request.getParameter("ComplaintId"));
 		ResultSet res = pst.executeQuery();
 		if(res.next()){
-			out.println("ComplaintType is " + res.getString("ComplaintType"));
-			out.println("Complaint Description" + res.getString("CDescription"));
-			out.println("ComplaintDate " + res.getDate("ComplaintDate"));
-			out.println("Severity is "+ res.getString("Severity"));
-			out.println("Status is " + res.getString("Status"));
+			out.println("ComplaintType is     :" + res.getString("ComplaintType")+"<br>");
+			out.println("Complaint Description    :" + res.getString("CDescription")+"<br>");
+			out.println("ComplaintDate    :" + res.getDate("ComplaintDate")+"<br>");
+			out.println("Severity is     "+ res.getString("Severity")+"<br>");
+			out.println("Status is   : " + res.getString("Status")+"<br>");
 		}
 	}
 	
