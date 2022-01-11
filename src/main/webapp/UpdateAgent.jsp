@@ -44,7 +44,7 @@
 		agentUpdate.setGender(Gender.valueOf(request.getParameter("GENDER")));
 		agentUpdate.setMaritalStatus(Integer.parseInt(request.getParameter("MaritalStatus")));
 		agentUpdate.setPremium(Double.parseDouble(request.getParameter("Premium")));
-		dao.updateAgent(agent);
+		dao.updateAgent(agentUpdate);
 
 %>
 <jsp:forward page="AgentTable.jsp"></jsp:forward>
