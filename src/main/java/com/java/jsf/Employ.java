@@ -63,7 +63,7 @@ public class Employ {
 	
 	public String saveEmploy(Employ employ) throws ClassNotFoundException, SQLException {
 		dao.addEmploy(employ);
-		return "CreateEmploy.xhtml?faces-redirect=true";
+		return "EmployShowAll.xhtml?faces-redirect=true";
 	}
 	
 	public String deleteEmploy(int empno) throws ClassNotFoundException, SQLException {
