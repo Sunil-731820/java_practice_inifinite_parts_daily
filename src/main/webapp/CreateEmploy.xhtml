@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+      
+<h:body>
+	<h1>Create the New Employ Records Here </h1>
+	<h:form>
+
+		
+		Enter Employ Number:
+		<h:inputText value="#{employ.empno}"></h:inputText><br></br>
+		
+		Enter Employ Name:
+		<h:inputText value="#{employ.name}"></h:inputText><br></br>
+		
+		Enter Gender:
+		<h:selectOneRadio value="#{employ.gender}">
+			<f:selectItem itemValue="MALE" itemLabel="MALE"></f:selectItem>
+			<f:selectItem itemValue="FEMALE" itemLabel="FEMALE"></f:selectItem>
+		</h:selectOneRadio>
+		
+		Enter Department :
+		<h:inputText value="#{employ.dept}"></h:inputText><br></br>
+		
+		Enter Designation :
+		<h:inputText value="#{employ.desig}"></h:inputText><br></br>
+		
+		Enter Basic :
+		<h:inputText value="#{employ.basic}"></h:inputText><br></br>
+		
+		<h:commandButton value="Save" action="#{employ.saveEmploy(employ)}" class="btn btn-success" style="width: 80px;"></h:commandButton>
+
+		
+	
+	</h:form>
+	
+
+
+
+</h:body>      
+      
+      
+      
+</html>
+      
