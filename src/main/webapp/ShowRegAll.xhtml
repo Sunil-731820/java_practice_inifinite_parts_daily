@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:sql_rt="http://java.sun.com/jstl/sql_rt">
+      
+	<h:head>
+		<title>Registration form </title>
+		<style>
+			
+ 	table{
+ 		border-collapse:collapse;
+ 		width:90% ;
+ 		}
+ 		
+ 		th,td{
+ 		text-align: left;
+ 		padding: 4px;
+ 		border: 10px
+ 		}
+ 		
+ 		tr:nth-child(even){background-color: #f2f2f2 		
+ 		}
+ 		
+ 		th{
+ 		background-color: #4CAF50;
+ 		color: white;
+ 		border: 10px
+ 		
+ 		}
+ 		
+ 		h2{
+ 		border: 60px;
+ 		color: blue;
+ 		}
+ 	
+ 		
+		
+		</style>
+	</h:head>      
+	
+	<h:body>
+	<h:form>
+	<center>
+         <h2 id="hi"><h:outputText value="Registered Records"/></h2>
+    </center>
+             <h:dataTable value="#{harishreg.showReg()}" var="h">
+             <h:column>
+	             <f:facet name="header">Name</f:facet>
+	              <h:outputText value="#{h.fname}"/>
+             </h:column>
+                
+               <h:column>
+	             <f:facet name="header">Email</f:facet>
+	              <h:outputText value="#{h.email}"/>
+             </h:column>
+             
+              <h:column>
+	             <f:facet name="header">passWord</f:facet>
+	              <h:outputText value="#{h.pass}"/>
+             </h:column>
+             
+              <h:column>
+	             <f:facet name="header">enrollment</f:facet>
+	              <h:outputText value="#{h.enrollnum}"/>
+             </h:column>
+             
+              <h:column>
+	             <f:facet name="header">Phone Number</f:facet>
+	              <h:outputText value="#{h.phoneNum}"/>
+             </h:column>
+                
+                 <h:column>
+	             <f:facet name="header">College Name</f:facet>
+	              <h:outputText value="#{h.collegeName}"/>
+             </h:column>
+             
+              <h:column>
+	             <f:facet name="header">Branch name</f:facet>
+	              <h:outputText value="#{h.branch}"/>
+             </h:column>
+             
+              <h:column>
+	             <f:facet name="header">Semester</f:facet>
+	              <h:outputText value="#{h.semester}"/>
+             </h:column>
+                
+             </h:dataTable>
+             <hr></hr>
+             <center>
+      <h:commandButton action = "CreateRegistration.xhtml?faces-redirect=true" value="Register" class="btn btn-success"></h:commandButton>
+    </center>         
+    
+	</h:form>
+	
+	</h:body>
+      
+</html>
+      

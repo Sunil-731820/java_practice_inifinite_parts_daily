@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:sql_rt="http://java.sun.com/jstl/sql_rt">
+      
+      
+      <h:body>
+      	<h:form>
+      		<h1>Enter First Registration Details Here</h1>
+      		
+      		Enter Name Here :
+      		<h:inputText value="#{harishreg.fname}"></h:inputText><br></br>
+      		
+      		Enter Email Here :
+      		<h:inputText value="#{harishreg.email}"></h:inputText><br></br>
+      	
+      		Enter Password Here :
+      		<h:inputText value="#{harishreg.pass}"></h:inputText><br></br>
+      		
+      		Enter Enrollment number Here :
+      		<h:inputText value="#{harishreg.enrollnum}"></h:inputText><br></br>
+      		
+      		Enter Phone Number Here :
+      		<h:inputText value="#{harishreg.phoneNum}"></h:inputText><br></br>
+      		
+      		Enter College Name  Here :
+      		<h:inputText value="#{harishreg.collegeName}"></h:inputText><br></br>
+      		
+      		Enter Branch Name Here :
+      		<h:inputText value="#{harishreg.branch}"></h:inputText><br></br>
+      		
+      		Enter Semester Here :
+      		<h:inputText value="#{harishreg.semester}"></h:inputText><br></br>
+      		
+      <h:commandButton value="Save" action="#{harishreg.saveEmploy(harishreg)}" class="btn btn-success" style="width: 80px;"></h:commandButton>
+      		
+      	</h:form>
+      
+      
+      
+      </h:body>
+      
+</html>
+      
