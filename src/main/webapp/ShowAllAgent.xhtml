@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:sql_rt="http://java.sun.com/jstl/sql_rt">
+
+    <h:head>
+ 	<title>Agent  Details Here</title>
+ 	<style>
+ 	#button{
+        
+        background-color: #f2f2f2 ;
+    
+        transition: height 0.25s linear 0.25s;
+    }
+    #button:hover{
+        height: 50px;
+        transition: height 0.25s linear;
+    }
+    #hi:hover{
+        height: 50px;
+        transition: height 0.25s linear;
+    }
+ 	
+ 	table{
+ 		border-collapse:collapse;
+ 		width:90% ;
+ 		}
+ 		
+ 		
+ 		th,td{
+ 		text-align: left;
+ 		padding: 4px;
+ 		border: 10px
+ 		}
+ 		
+ 		tr:nth-child(even){background-color: #f2f2f2 		
+ 		}
+ 		
+ 		th{
+ 		background-color: #4CAF50;
+ 		color: white;
+ 		border: 10px
+ 		
+ 		}
+ 		
+ 		h2{
+ 		border: 60px;
+ 		color: blue;
+ 		}
+ 	
+ 	</style>
+ 
+ </h:head>
+ 
+ <h:body>
+<div id="button">
+		<h:form>
+			<center>
+                <h2 id="hi"><h:outputText value="Agent Records"/></h2>
+            </center>
+            <h:dataTable value="#{agent.showAgent()}" var="a">
+            
+            	<h:column>
+            		<f:facet name="header">Agent Id</f:facet>
+            		<h:outputText value="#{a.agentId}"/>
+            	</h:column>
+            	
+            	<h:column>
+            		<f:facet name="header">Agent Name</f:facet>
+            		<h:outputText value="#{a.name}"/>
+            	</h:column>
+            	
+            	<h:column>
+            		<f:facet name="header">City</f:facet>
+            		<h:outputText value="#{a.city}"/>
+            	</h:column>
+            	
+            	<h:column>
+            		<f:facet name="header">Gender</f:facet>
+            		<h:outputText value="#{a.gender}"/>
+            	</h:column>
+            	
+            	<h:column>
+            		<f:facet name="header">MaritalStatus</f:facet>
+            		<h:outputText value="#{a.maritalStatus}"/>
+            	</h:column>
+            	
+            	<h:column>
+            		<f:facet name="header">premium</f:facet>
+            		<h:outputText value="#{a.premium}"/>
+            	</h:column>
+            	
+            	<h:column>
+            		<f:facet name="header">Update</f:facet>  
+				<h:commandButton action = "edit.xhtml?faces-redirect=true" value="Update" class="btn btn-success"></h:commandButton>  
+            	</h:column>
+            	
+            	
+            	<h:column>  
+				<f:facet name="header">Delete</f:facet>  
+				<h:commandButton action = "#{agent.deleteAgent(a.agentId)}" value="Delete" class="btn btn-danger">  
+				</h:commandButton>  
+				</h:column>    
+				
+            </h:dataTable>
+            <hr></hr>
+            <center>
+           <h:commandButton action = "CreateAgent.xhtml?faces-redirect=true" value="Create" class="btn btn-success"></h:commandButton>
+            
+	</center>
+            
+		</h:form>
+		</div>
+	
+		
+	</h:body>
+      
+</html>
+      

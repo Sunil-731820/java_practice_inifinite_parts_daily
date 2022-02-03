@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+
+<h:body>
+
+	<h1>Create the New Agent Records Here </h1>
+	<h:form id="hello">
+		Enter Agent Id Here :
+		<h:inputText value="#{agent.agentId}"></h:inputText><br></br>
+		
+		Enter Agent Name:
+		<h:inputText value="#{agent.name}"></h:inputText><br></br>
+		
+		Enter City :
+		<h:inputText value="#{agent.city}"></h:inputText><br></br>
+		
+		Enter Gender:
+		<h:selectOneRadio value="#{agent.gender}">
+			<f:selectItem itemValue="MALE" itemLabel="MALE"></f:selectItem>
+			<f:selectItem itemValue="FEMALE" itemLabel="FEMALE"></f:selectItem>
+		</h:selectOneRadio>
+		
+		
+		
+		Enter Maritalstatus :
+		<h:inputText value="#{agent.maritalStatus}"></h:inputText><br></br>
+		
+		Enter Premium :
+		<h:inputText value="#{agent.premium}"></h:inputText><br></br>
+		
+		<h:commandButton value="Save" action="#{agent.saveAgent(agent)}" class="btn btn-success" style="width: 80px;"></h:commandButton>
+
+	</h:form>
+	
+</h:body>      
+
+
+
+</html>
+      
