@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:sql_rt="http://java.sun.com/jstl/sql_rt">
+  
+  
+ <h:head>
+ 	<title>Vendor Details Here</title>
+ 	<style>
+ 	#button{
+        
+        background-color: #f2f2f2 ;
+    
+        transition: height 0.25s linear 0.25s;
+    }
+    #button:hover{
+        height: 50px;
+        transition: height 0.25s linear;
+    }
+    #hi:hover{
+        height: 50px;
+        transition: height 0.25s linear;
+    }
+ 	
+ 	table{
+ 		border-collapse:collapse;
+ 		width:90% ;
+ 		}
+ 		
+ 		
+ 		th,td{
+ 		text-align: left;
+ 		padding: 4px;
+ 		border: 10px
+ 		}
+ 		
+ 		tr:nth-child(even){background-color: #f2f2f2 		
+ 		}
+ 		
+ 		th{
+ 		background-color: #4CAF50;
+ 		color: white;
+ 		border: 10px
+ 		
+ 		}
+ 		
+ 		h2{
+ 		border: 60px;
+ 		color: blue;
+ 		}
+ 	
+ 	</style>
+ 
+ </h:head>
+      
+<h:body>
+  <img src="v1.jpg" alt="Italian Trulli" width="300" align="center"></img>
+	  <img src="v2.jpg" alt="Italian Trulli" width="300" align="center"></img>
+	<img src="v1.jpg" alt="Italian Trulli" width="300" align="center"></img>
+	  <img src="v2.jpg" alt="Italian Trulli" width="300" align="center"></img>
+	    <img src="v1.jpg" alt="Italian Trulli" width="300" align="center"></img>
+	  
+<div id="button">
+		<h:form>
+			<center>
+                <h2 id="hi"><h:outputText value="Vendor  Records"/></h2>
+            </center>
+            <h:dataTable value="#{vendor.showVendor()}" var="v">
+            
+            	<h:column>
+            		<f:facet name="header">vendor Id</f:facet>
+            		<h:outputText value="#{v.venId}"/>
+            </h:column>
+            
+            <h:column>
+            		<f:facet name="header">vendor Name</f:facet>
+            		<h:outputText value="#{v.venname}"/>
+            </h:column>
+            
+            <h:column>
+            		<f:facet name="header">vendor  Phone Number</f:facet>
+            		<h:outputText value="#{v.phoneNum}"/>
+            </h:column>
+            
+            <h:column>
+            		<f:facet name="header">vendor user Name</f:facet>
+            		<h:outputText value="#{v.userName}"/>
+            </h:column>
+            
+            <h:column>
+            		<f:facet name="header">vendor passWord</f:facet>
+            		<h:outputText value="#{v.passWord}"/>
+            </h:column>
+            	
+            <h:column>
+            		<f:facet name="header">Vendor Email Id</f:facet>
+            		<h:outputText value="#{v.email}"/>
+            </h:column>
+  
+            	
+            </h:dataTable>
+           
+            
+		</h:form>
+</div>
+	
+		
+	</h:body>
+      
+</html>
+      

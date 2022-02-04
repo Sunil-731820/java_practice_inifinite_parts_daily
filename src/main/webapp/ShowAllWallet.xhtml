@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:sql_rt="http://java.sun.com/jstl/sql_rt">
+  
+  
+ <h:head>
+ 	<title>Wallet Details Here</title>
+ 	<style>
+ 	#button{
+        
+        background-color: #f2f2f2 ;
+    
+        transition: height 0.25s linear 0.25s;
+    }
+    #button:hover{
+        height: 50px;
+        transition: height 0.25s linear;
+    }
+    #hi:hover{
+        height: 50px;
+        transition: height 0.25s linear;
+    }
+ 	
+ 	table{
+ 		border-collapse:collapse;
+ 		width:90% ;
+ 		}
+ 		
+ 		
+ 		th,td{
+ 		text-align: left;
+ 		padding: 4px;
+ 		border: 10px
+ 		}
+ 		
+ 		tr:nth-child(even){background-color: #f2f2f2 		
+ 		}
+ 		
+ 		th{
+ 		background-color: #4CAF50;
+ 		color: white;
+ 		border: 10px
+ 		
+ 		}
+ 		
+ 		h2{
+ 		border: 60px;
+ 		color: blue;
+ 		}
+ 	
+ 	</style>
+ 
+ </h:head>
+      
+<h:body>
+  <img src="pytm1.jpg" alt="Italian Trulli" width="300" align="center"></img>
+      <img src="pytm1.jpg" alt="Italian Trulli" width="300" align="center"></img>
+      <img src="pytm1.jpg" alt="Italian Trulli" width="300" align="center"></img>
+      <img src="pytm1.jpg" alt="Italian Trulli" width="300" align="center"></img>
+      <img src="pytm1.jpg" alt="Italian Trulli" width="300" align="center"></img>
+    
+<div id="button">
+		<h:form>
+			<center>
+                <h2 id="hi"><h:outputText value="Wallet  Records"/></h2>
+            </center>
+            <h:dataTable value="#{wallet.showWallet()}" var="w">
+            
+            	<h:column>
+            		<f:facet name="header">Customer Id</f:facet>
+            		<h:outputText value="#{w.cusId}"/>
+            </h:column>
+            
+            <h:column>
+            		<f:facet name="header">Wallet Id</f:facet>
+            		<h:outputText value="#{w.walId}"/>
+            </h:column>
+            
+            <h:column>
+            		<f:facet name="header">Amount in Wallet</f:facet>
+            		<h:outputText value="#{w.walAmount}"/>
+            </h:column>
+            
+            <h:column>
+            		<f:facet name="header">WalSouce</f:facet>
+            		<h:outputText value="#{c.walSource}"/>
+            </h:column>
+            
+          
+            </h:dataTable>
+           
+            
+		</h:form>
+</div>
+	
+		
+	</h:body>
+      
+</html>
+      
