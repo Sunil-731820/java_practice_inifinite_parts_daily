@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:sql_rt="http://java.sun.com/jstl/sql_rt">
+ <h:head>
+ 	<title>Menu Details Here</title>
+ 	<style>
+ 	#button{
+        
+        background-color: #f2f2f2 ;
+    
+        transition: height 0.25s linear 0.25s;
+    }
+    #button:hover{
+        height: 50px;
+        transition: height 0.25s linear;
+    }
+    #hi:hover{
+        height: 50px;
+        transition: height 0.25s linear;
+    }
+ 	
+ 	table{
+ 		border-collapse:collapse;
+ 		width:90% ;
+ 		}
+ 		
+ 		
+ 		th,td{
+ 		text-align: left;
+ 		padding: 4px;
+ 		border: 10px
+ 		}
+ 		
+ 		tr:nth-child(even){background-color: #f2f2f2 		
+ 		}
+ 		
+ 		th{
+ 		background-color: #4CAF50;
+ 		color: white;
+ 		border: 10px
+ 		
+ 		}
+ 		
+ 		h2{
+ 		border: 60px;
+ 		color: blue;
+ 		}
+ 	
+ 	</style>
+ 
+ </h:head>
+ <h:body>
+ 
+  <img src="menu.png" alt="Italian Trulli" width="300" align="center"></img>
+    <img src="menu.png" alt="Italian Trulli" width="300" align="center"></img>
+    <img src="menu.png" alt="Italian Trulli" width="300" align="center"></img>
+    <img src="menu.png" alt="Italian Trulli" width="300" align="center"></img>
+    <img src="menu.png" alt="Italian Trulli" width="300" align="center"></img>
+  
+ 
+ 	<div id="button">
+		<h:form>
+			<center>
+                <h2 id="hi"><h:outputText value="Menu Records"/></h2>
+            </center>
+            <h:dataTable value="#{menu.showMenu()}" var="m">
+            
+            	<h:column>
+            		<f:facet name="header">Menu Id</f:facet>
+            		<h:outputText value="#{m.menId}"/>
+            	</h:column>
+            	
+            	<h:column>
+            		<f:facet name="header">Menu Items</f:facet>
+            		<h:outputText value="#{m.menItem}"/>
+            	</h:column>
+            	
+            	<h:column>
+            		<f:facet name="header">Menu Price</f:facet>
+            		<h:outputText value="#{m.menPrice}"/>
+            	</h:column>
+            	
+         
+            	
+            	<h:column>
+            		<f:facet name="header">Menu Calories</f:facet>
+            		<h:outputText value="#{m.menCalories}"/>
+            	</h:column>
+            	
+            	<h:column>
+            		<f:facet name="header">Menu Speciality</f:facet>
+            		<h:outputText value="#{m.menSpeciality}"/>
+            	</h:column>
+            	
+            	<h:column>
+            		<f:facet name="header">Update</f:facet>  
+				<h:commandButton action = "edit.xhtml?faces-redirect=true" value="Update" class="btn btn-success"></h:commandButton>  
+            	</h:column>
+            	
+            	
+            	<h:column>  
+				<f:facet name="header">Delete</f:facet>  
+				<h:commandButton action = "#{menu.deleteMenu(m.menId)}" value="Delete" class="btn btn-danger">  
+				</h:commandButton>  
+				</h:column>    
+				
+            </h:dataTable>
+            <hr></hr>
+            <center>
+           <h:commandButton action = "CreateMenu.xhtml?faces-redirect=true" value="Create" class="btn btn-success"></h:commandButton>
+            
+	</center>
+            
+		</h:form>
+		</div>
+ 
+ </h:body>
+ 
+ 
+
+
+</html>
+      
