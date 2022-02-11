@@ -9,7 +9,8 @@
 <body>
 <a href="RoomShow.jsp">Customer Show</a>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
+<a href="RoomSearch.jsp">Search  Room</a>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 </body>
 </html>
