@@ -27,10 +27,9 @@
 			out.println("Room cost Per Day " + room.getCostPerDay()+"<br><br>");
 			
 		}else{
-			out.println("Room Not available");
+			out.println("Room not found Bu This Id");
 		}
 	}
-	
 	%>
 </table>
 
