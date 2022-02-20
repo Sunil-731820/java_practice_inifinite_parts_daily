@@ -9,9 +9,9 @@
 </head>
 <body>
 <%
-	int empno = Integer.parseInt(request.getParameter("empno"));
+	String firstName =request.getParameter("firstName");
 	EmployDAO dao = new EmployDAO();
-	dao.deleteEmploy(empno);
+	dao.deleteEmploy(firstName);
 %>
 <jsp:forward page="EmployTable.jsp"></jsp:forward>
 </body>

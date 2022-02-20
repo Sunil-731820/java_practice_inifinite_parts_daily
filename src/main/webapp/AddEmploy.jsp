@@ -11,40 +11,34 @@
 <body>
 <%
 	EmployDAO dao = new EmployDAO();
-   int empno = dao.generateEmployNo();
+  
 
 %>
 <form method="get" action="AddEmploy.jsp">
 	<center>
-		Enter Employ No : 
-			<input type="number" name="empno" value=<%=empno %> /> <br/><br/>
-			Enter Employ Name : 
-			<input type="text" name="name" /> <br/><br/> 
-			choose Gender :
-			<select name="gender">
-				<option value="MALE">Male</option>
-				<option value="FEMALE">Female</option>
-			</select> <br/><br/> 
-			Enter Department : 
-			<input type="text" name="dept" /> <br/><br/>
-			Enter Designation : 
-			<input type="text" name="desig" /> <br/><br/> 
-			Enter Basic : 
-			<input type="number" name="basic" /> <br/><br/> 
+		Enter Employ First Name : 
+			<input type="text" name="firstName"  /> <br/><br/>
+			Enter Employ Last Name : 
+			<input type="text" name="lastName" /> <br/><br/> 
+			
+			Enter Employ Age : 
+			<input type="number" name="age" /> <br/><br/>
+			Enter Employ LOcation : 
+			<input type="text" name="location" /> <br/><br/> 
+			 
 			<input type="submit" value="Add Employ" />
 	</center>>
 </form>
 	<%
-		if (request.getParameter("empno")!=null &&  
-			request.getParameter("name") !=null
+		if (request.getParameter("firstName")!=null &&  
+			request.getParameter("lastName") !=null
 				) {
 			Employ employ = new Employ();
-			employ.setEmpno(empno);
-			employ.setName(request.getParameter("name"));
-			employ.setGender(request.getParameter("gender"));
-			employ.setDept(request.getParameter("dept"));
-			employ.setDesig(request.getParameter("desig"));
-			employ.setBasic(Integer.parseInt(request.getParameter("basic")));
+			employ.setFirstName(request.getParameter("firstName"));
+			employ.setLastName(request.getParameter("lastName"));
+			employ.setAge(Integer.parseInt(request.getParameter("age")));
+			employ.setLocation(request.getParameter("location"));
+			
 			dao.addEmploy(employ);
 	%>
 		<jsp:forward page="EmployTable.jsp"/>

@@ -14,14 +14,12 @@
 	Employ[] arrEmploy = dao.showEmploy();
 	
 	%>
-	<table border="3">
+	<table border="3" align="center">
 	<tr>
-		<th>Employ Number </th>
-		<th>Employ Name </th>
-		<th>Gender  </th>
-		<th>Department </th>
-		<th>Designation</th>
-		<th>Basic</th>
+		<th>Employ First Name </th>
+		<th>Employ Last Name </th>
+		<th>Employ age  </th>
+		<th>Employ Locations  </th>
 		<th>Update</th>
 		<th>Delete</th>
 	</tr>
@@ -29,14 +27,12 @@
 	for(Employ employ : arrEmploy){
 %>
 	<tr>
-		<td><%=employ.getEmpno() %></td>
-		<td><%=employ.getName() %></td>
-		<td><%=employ.getGender() %></td>
-		<td><%=employ.getDept() %></td>
-		<td><%=employ.getDesig() %></td>
-		<td><%=employ.getBasic() %></td>
-		<td><a href=UpdateEmploy.jsp?empno=<%=employ.getEmpno() %>>Update</a></td>
-		<td><a href=DeleteEmploy.jsp?empno=<%=employ.getEmpno() %>>Delete</a></td>
+		<td><%=employ.getFirstName() %></td>
+		<td><%=employ.getLastName() %></td>
+		<td><%=employ.getAge() %></td>
+		<td><%=employ.getLocation() %></td>
+		<td><a href=UpdateEmploy.jsp?firstName=<%=employ.getFirstName()%>>Update</a></td>
+		<td><a href=DeleteEmploy.jsp?firstName=<%=employ.getFirstName() %>>Delete</a></td>
 	
 	
 	</tr>

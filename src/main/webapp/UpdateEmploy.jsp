@@ -11,35 +11,29 @@
 <body>
 	<%
 	EmployDAO dao = new EmployDAO();
-	int empno = Integer.parseInt(request.getParameter("empno"));
-	Employ employ = dao.searchEmploy(empno);
+	String firstName = request.getParameter("firstName");
+	Employ employ = dao.searchEmploy(firstName);
 	%>
 	<form method="get" action="UpdateEmploy.jsp">
 		<center>
-			Employ Number :
-			<input type="number" name="empno" readonly="readonly" value=<%=empno %> ><br><br>
-			Employ Name :
-			<input type="text" name="name" value=<%=employ.getName() %>><br><br>
-			Gender :
-			<input type="text" name="gender" value=<%=employ.getGender() %>><br><br>
-			Department : 
-			<input type="text" name="dept" value=<%=employ.getDept() %>><br><br>
-			Designation :
-			<input type="text" name="desig" value=<%=employ.getDesig() %>><br><br>
-			Basic :
-			<input type="number" name="basic" value=<%=employ.getBasic() %>><br><br>
+			Employ FirstName :
+			<input type="text" name="firstName" readonly="readonly" value=<%=firstName %> ><br><br>
+			Employ Last Name :
+			<input type="text" name="lastName" value=<%=employ.getLastName() %>><br><br>
+			Age :
+			<input type="number" name="age" value=<%=employ.getAge() %>><br><br>
+			Enter Location : 
+			<input type="text" name="location" value=<%=employ.getLocation() %>><br><br>
 			<input type="submit" value="Update Employ">
 		</center>
 	</form>
 	<%
-		if(request.getParameter("empno")!=null && request.getParameter("basic")!=null){
+		if(request.getParameter("firstName")!=null && request.getParameter("age")!=null){
 			Employ employUpdate = new Employ();
-			employUpdate.setEmpno(Integer.parseInt(request.getParameter("empno")));
-			employUpdate.setName(request.getParameter("name"));
-			employUpdate.setGender(request.getParameter("gender"));
-			employUpdate.setDept(request.getParameter("dept"));
-			employUpdate.setDesig(request.getParameter("desig"));
-			employUpdate.setBasic(Integer.parseInt(request.getParameter("basic")));
+			employUpdate.setFirstName(request.getParameter("firstName"));
+			employUpdate.setLastName(request.getParameter("lastName"));
+			employUpdate.setAge(Integer.parseInt(request.getParameter("age")));
+			employUpdate.setLocation(request.getParameter("location"));
 			dao.updateEmploy(employUpdate);
 			%>
 			<jsp:forward page="EmployTable.jsp"></jsp:forward>

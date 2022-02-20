@@ -1,48 +1,39 @@
 package com.java.dashborad;
 
 public class Employ {
-	private int empno;
-	private String name;
-	private String gender;
-	private String dept;
-	private String desig;
-	private int basic;
-	public int getEmpno() {
-		return empno;
+	
+	private String firstName;
+	private String lastName;
+	private int age;
+	private String location;
+	
+	
+	public String getFirstName() {
+		return firstName;
 	}
-	public void setEmpno(int empno) {
-		this.empno = empno;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
-	public String getName() {
-		return name;
+	public String getLastName() {
+		return lastName;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
-	public String getGender() {
-		return gender;
+	public int getAge() {
+		return age;
 	}
-	public void setGender(String gender) {
-		this.gender = gender;
+	public void setAge(int age) {
+		this.age = age;
 	}
-	public String getDept() {
-		return dept;
+	public String getLocation() {
+		return location;
 	}
-	public void setDept(String dept) {
-		this.dept = dept;
+	public void setLocation(String location) {
+		this.location = location;
 	}
-	public String getDesig() {
-		return desig;
-	}
-	public void setDesig(String desig) {
-		this.desig = desig;
-	}
-	public int getBasic() {
-		return basic;
-	}
-	public void setBasic(int basic) {
-		this.basic = basic;
-	}
+	
+	
 	
 	
 
